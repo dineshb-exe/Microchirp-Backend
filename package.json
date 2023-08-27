@@ -1,0 +1,21 @@
+{
+  "name": "microchirp-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "B Dinesh",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "jsonwebtoken": "^9.0.1",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3"
+  }
+}
