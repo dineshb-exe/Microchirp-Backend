@@ -8,6 +8,7 @@ const init = async () => {
         port: 8086,
         host: 'localhost'
     });
+    await server.register(require("./plugins/validate_token"));
     server.route(routes);
     await server.start();
     console.log('Server running on %s', server.info.uri);
