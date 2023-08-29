@@ -15,7 +15,7 @@ async function login(request,response){
             // console.log(rows[0]['password']);
             const isMatched = bcrypt.compareSync(password,rows[0]['password']);
             if(isMatched){
-                const token = generateToken(username);
+                const token = generateToken(rows[0]['user_id']);
                 return {
                     accesstoken :token,
                     user_id: rows[0]['user_id']
