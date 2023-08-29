@@ -34,10 +34,17 @@ async function fetchBlogs(request,response){
             try {
                 const { rows } = await client.query(fetchQuery2,values2);
                 console.log("Blogs fetched successfully");
-                return rows;
+                return {
+                    "status": "Success",
+                    "data": rows
+                };
                 
             } catch (err) {
                 console.error("DB errorB: ",err);
+                return {
+                    "status": "Failure",
+                    "message": err
+                };
             }
         }
         else{
@@ -50,10 +57,17 @@ async function fetchBlogs(request,response){
             try {
                 const { rows } = await client.query(fetchQuery2,values2);
                 console.log("Liked blogs fetched successfully");
-                return rows;
+                return {
+                    "status": "Success",
+                    "data": rows
+                };
                 
             } catch (err) {
                 console.error("DB errorB: ",err);
+                return {
+                    "status": "Failure",
+                    "message": err
+                };
             }
         }
     }
@@ -67,10 +81,17 @@ async function fetchBlogs(request,response){
         try {
             const { rows } = await client.query(fetchQuery3);
             console.log("Blogs fetched successfully");
-            return rows;
+            return {
+                "status": "Success",
+                "data": rows
+            };
             
         } catch (err) {
             console.error("DB errorC: ",err);
+            return {
+                "status": "Failure",
+                "message": err
+            };
         }
     }
 }

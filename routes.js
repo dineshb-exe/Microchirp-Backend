@@ -4,6 +4,7 @@ const newBlog = require("./handlers/new_blog");
 const like = require("./handlers/like");
 const comment = require("./handlers/comment");
 const fetchBlogs = require("./handlers/fetch_blogs");
+const fetchComments = require("./handlers/fetch_comments");
 
 client.connect();
 const routes = [{
@@ -26,5 +27,9 @@ const routes = [{
     method: 'GET',
     path: '/fetchBlogs',
     handler: fetchBlogs
+},{
+    method: 'GET',
+    path: '/fetchComments',
+    handler: fetchComments,
 }];
 module.exports = routes;
