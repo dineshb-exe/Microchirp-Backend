@@ -1,5 +1,4 @@
 const client = require("./../db");
-const validateToken = require("../plugins/validate_token");
 
 async function comment(request,response){
     const commenter_id = request.payload.user_id;

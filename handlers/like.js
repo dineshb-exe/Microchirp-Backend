@@ -1,5 +1,4 @@
 const client = require("./../db");
-const validateToken = require("../plugins/validate_token");
 
 async function like(request,response){
     const user_id = request.payload.user_id;

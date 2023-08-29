@@ -1,5 +1,4 @@
 const client = require("./../db");
-const validateToken = require("../plugins/validate_token");
 async function newBlog(request,response){
     const user_id = request.payload.user_id;
     const blog_content = request.payload.blog_content;

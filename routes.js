@@ -3,6 +3,7 @@ const login = require("./handlers/login");
 const newBlog = require("./handlers/new_blog");
 const like = require("./handlers/like");
 const comment = require("./handlers/comment");
+const fetchBlogs = require("./handlers/fetch_blogs");
 
 client.connect();
 const routes = [{
@@ -21,5 +22,9 @@ const routes = [{
     method: 'POST',
     path: '/newComment',
     handler: comment
+},{
+    method: 'GET',
+    path: '/fetchBlogs',
+    handler: fetchBlogs
 }];
 module.exports = routes;
