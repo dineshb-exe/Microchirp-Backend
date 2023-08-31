@@ -4,7 +4,7 @@ require('dotenv').config();
 
 async function validateToken(request,response){
     excludedRoutes = ['/login'];
-    if(!excludedRoutes.includes(request.uri)){
+    if(!(excludedRoutes.includes(request.route.path))){
         const jwtSecretKey = process.env.JWT_SECRET_KEY;
         try{
             const token = await request.headers.token_header_key;

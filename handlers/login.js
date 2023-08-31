@@ -8,6 +8,10 @@ async function login(request,response){
     const {rows} = await client.query(`SELECT * FROM USERS WHERE username = $1`,[username]);
     if(rows.length==0){
         console.log("No such user");
+        return {
+            "status": "Failure",
+            "message": "No such user"
+        };
     }
     else{
         try{
@@ -17,12 +21,16 @@ async function login(request,response){
             if(isMatched){
                 const token = generateToken(rows[0]['user_id']);
                 return {
+                    "status": "Success",
                     accesstoken :token,
                     user_id: rows[0]['user_id']
                 };        
             }
             else{
-                return "Error";
+                return {
+                    "status": "Failure",
+                    "message": "Wrong Password"
+                };
             }
         }
         catch(err){

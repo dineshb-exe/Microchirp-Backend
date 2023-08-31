@@ -6,7 +6,7 @@ const init = async () => {
 
     const server = Hapi.server({
         port: 8086,
-        host: 'localhost'
+        host: '0.0.0.0'
     });
     await server.register(require("./plugins/validate_token"));
     server.route(routes);
